@@ -6,6 +6,16 @@
   height: 40vmin;
   pointer-events: none;
 }
+button{
+  padding: 10px;
+  background: none;
+  width: 50%;
+  border-radius: 5px;
+  border: 2px solid gainsboro;
+  font-weight: bold;
+  margin: auto;
+  display: inline-block;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
