@@ -1,17 +1,18 @@
 import styled, { css } from 'styled-components';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function Escena(props) {
-    const P = styled.p`border-radius:20px;border:2px solid gray;padding:10px;margin:5px;
+    const [count, setCount] = useState(0);
+    const P = styled.p`border-radius:20px;border:2px solid gray;padding:10px;margin:5px;background:white;
     ${props => props.active && css`
     background:red;
     `}`
-    const [count, setCount] = useState(0);
+    useEffect(() => { props.refe.style.background = `url(img/${count + 1}.jpg)` })
     const frases = props.frase.map((prop, index) => {
         if (index === count) {
-            return <P key={index} active>{prop}</P>
+            return <P key={index} active>{prop.frase}</P>
         }
-        return <P key={index}>{prop}</P>
+        return <P key={index}>{prop.frase}</P>
     })
     return (
         <div>

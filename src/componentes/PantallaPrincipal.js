@@ -6,8 +6,7 @@ export default function Principal(props) {
     return (
         <div>
             <P>Bienvenida</P>
-            <button onClick={()=>{props.condicion(true)}}
-            >Comenzar</button>
+            <button onClick={()=>{props.condicion(true)}}>Comenzar</button>
         </div>
     );
 }

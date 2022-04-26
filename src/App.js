@@ -1,12 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import './App.css';
 import Frase from './componentes/escenas/Escena';
 import PantallaPrincipal from './componentes/PantallaPrincipal';
-import frases from './componentes/escenas/frases.json';
+import frases from './componentes/escenas/frases.js';
 
-function Condicional(props) {
+const Condicional = (props) => {
+  const ref = useRef(null);
   const [condicion, setCondicion] = useState(false);
-  return (<div>{condicion ? <Frase frase={frases} /> : <PantallaPrincipal condicion={setCondicion} /> }</div>)
+  return (
+    <div ref={ref}>
+      {condicion ? <Frase frase={frases.frases} refe={ref.current} /> : <PantallaPrincipal condicion={setCondicion} />}
+    </div>
+  )
 }
 
 function App() {
